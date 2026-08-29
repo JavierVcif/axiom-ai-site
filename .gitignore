@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.log
+
+# Original raw video exports — the site uses the copies in assets/videos/
+/Videos/

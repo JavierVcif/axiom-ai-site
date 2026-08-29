@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXIOM AI — Contenido premium producido con IA</title>
+<meta name="description" content="AXIOM AI produce video, imagen, audio y contenido para redes con inteligencia artificial, con curaduría humana, para marcas que necesitan publicar sin pausas.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="container navbar-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">◆</span>
+      <span>AXIOM<span class="logo-thin">AI</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#diferenciales">Por qué nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn-primary btn-nav">Agenda una llamada</a>
+    <button class="burger" id="burger" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg">
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline poster="">
+      <source src="assets/videos/hero-robot.mp4" type="video/mp4">
+    </video>
+    <div class="hero-gradient-bg" id="heroGradientBg">
+      <div class="grid-plane"></div>
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="eyebrow reveal">Estudio de contenido con Inteligencia Artificial</div>
+    <h1 class="hero-title reveal">
+      Contenido premium,<br>
+      <span class="text-gradient">hecho con IA.</span>
+    </h1>
+    <p class="hero-sub reveal">
+      Producimos video, imagen y audio con inteligencia artificial para marcas que necesitan contenido
+      constante — desde el guion hasta la pieza lista para publicar.
+    </p>
+
+    <div class="word-def reveal">
+      <span class="word-def-term">axiom</span>
+      <span class="word-def-langs">ES · EN · DE</span>
+      <span class="word-def-desc">verdad evidente que no necesita demostración</span>
+    </div>
+
+    <div class="hero-actions reveal">
+      <a href="#contacto" class="btn btn-primary btn-lg">Agenda una llamada</a>
+      <a href="#servicios" class="btn btn-ghost btn-lg">Ver servicios</a>
+    </div>
+
+    <!-- background mode switcher -->
+    <div class="bg-switcher reveal">
+      <div class="bg-switcher-tabs">
+        <button class="bg-tab active" data-mode="video">Video</button>
+        <button class="bg-tab" data-mode="design">Diseño</button>
+      </div>
+      <div class="bg-thumbs" id="bgThumbs">
+        <button class="bg-thumb active" data-src="assets/videos/hero-robot.mp4" title="Robot / datos">01</button>
+        <button class="bg-thumb" data-src="assets/videos/hero-coding.mp4" title="Figura codeando">02</button>
+        <button class="bg-thumb" data-src="assets/videos/hero-city.mp4" title="Ciudad">03</button>
+        <button class="bg-thumb" data-src="assets/videos/hero-storyboard.mp4" title="Storyboard">04</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue reveal">
+    <span></span>
+    <p>Scroll</p>
+  </div>
+</section>
+
+<!-- MARQUEE / TRUST -->
+<section class="marquee-section">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Video con IA</span><span>·</span>
+      <span>Imágenes &amp; branding</span><span>·</span>
+      <span>Audio &amp; voz</span><span>·</span>
+      <span>Contenido para redes</span><span>·</span>
+      <span>Producción multimedia</span><span>·</span>
+      <span>Video con IA</span><span>·</span>
+      <span>Imágenes &amp; branding</span><span>·</span>
+      <span>Audio &amp; voz</span><span>·</span>
+      <span>Contenido para redes</span><span>·</span>
+      <span>Producción multimedia</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Servicios</div>
+      <h2>Contenido con IA, curado por personas, listo para publicar</h2>
+    </div>
+
+    <div class="cards-grid">
+      <div class="service-card reveal">
+        <div class="service-card-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6z" stroke="currentColor" stroke-width="1.6"/><path d="M10 9.5v5l4-2.5-4-2.5z" fill="currentColor"/><path d="M18 8l3-2v12l-3-2" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="service-num">01</span>
+        </div>
+        <h3>Video con IA</h3>
+        <p>Video de marca, anuncios y contenido para redes generado y editado con IA — con voces y música incluidas, del guion al corte final.</p>
+        <ul class="service-list">
+          <li>Guion y storyboard</li>
+          <li>Generación y edición con IA</li>
+          <li>Voces y música con IA</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M21 15l-5-5-9 9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="service-num">02</span>
+        </div>
+        <h3>Imagen &amp; branding</h3>
+        <p>Piezas visuales, fotografía de producto y assets de marca generados con IA, listos para campañas.</p>
+        <ul class="service-list">
+          <li>Fotografía de producto con IA</li>
+          <li>Piezas para campañas</li>
+          <li>Identidad visual consistente</li>
+        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-card-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9.5h18M8 3v3.5M16 3v3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <span class="service-num">03</span>
+        </div>
+        <h3>Contenido para redes</h3>
+        <p>Paquete mensual de video, imagen y copy para que tu marca publique sin pausas, sin equipo de producción propio.</p>
+        <ul class="service-list">
+          <li>Calendario de contenido mensual</li>
+          <li>Video, imagen y copy incluidos</li>
+          <li>Adaptado a tu tono de marca</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="image-showcase reveal">
+      <figure class="image-showcase-item">
+        <img src="assets/images/brand-diamond.png" alt="Pieza de branding generada con IA: cristal facetado con gradiente violeta a cian sobre fondo negro">
+        <figcaption>Identidad de marca — generado con IA</figcaption>
+      </figure>
+      <figure class="image-showcase-item">
+        <img src="assets/images/brand-gradient.png" alt="Fondo abstracto generado con IA con gradiente violeta a cian, estilo pieza para campaña">
+        <figcaption>Pieza para campaña — generado con IA</figcaption>
+      </figure>
+    </div>
+
+    <div class="secondary-services reveal">
+      <div class="secondary-services-head">
+        <h3>¿Necesitas algo más que contenido?</h3>
+        <p>También ponemos sistemas detrás del contenido, cuando tu operación lo necesita.</p>
+      </div>
+      <div class="secondary-services-list">
+        <a href="#contacto" class="secondary-service-item">
+          <span class="secondary-service-title">Agentes de IA &amp; automatización</span>
+          <span class="secondary-service-desc">Chatbots y flujos automatizados que ejecutan tareas reales en tu negocio.</span>
+        </a>
+        <a href="#contacto" class="secondary-service-item">
+          <span class="secondary-service-title">Consultoría &amp; estrategia de IA</span>
+          <span class="secondary-service-desc">Diagnóstico y hoja de ruta para adoptar IA en tu operación.</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section section-alt" id="proceso">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Proceso</div>
+      <h2>Cómo trabajamos, de principio a fin</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-num">01</div>
+        <div class="timeline-body">
+          <h3>Brief &amp; referencias</h3>
+          <p>Entendemos tu marca, tono y el objetivo de cada pieza antes de producir nada.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">02</div>
+        <div class="timeline-body">
+          <h3>Producción con IA</h3>
+          <p>Generamos guion, video, imagen o audio con los modelos adecuados para cada pieza.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">03</div>
+        <div class="timeline-body">
+          <h3>Curaduría &amp; edición</h3>
+          <p>Seleccionamos, editamos y pulimos cada pieza hasta que está lista para publicar.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-num">04</div>
+        <div class="timeline-body">
+          <h3>Entrega &amp; calendario</h3>
+          <p>Entregamos el contenido listo, con calendario de publicación cuando aplica.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIALES -->
+<section class="section" id="diferenciales">
+  <div class="container diferenciales-grid">
+    <div class="reveal">
+      <div class="eyebrow">Por qué nosotros</div>
+      <h2>Calidad de agencia, ritmo de IA</h2>
+      <p class="lead-text">
+        Producir contenido de calidad constante es caro y lento con los métodos tradicionales. Usamos IA
+        para que produzcas más, mejor y sin depender de un equipo de producción completo.
+      </p>
+      <a href="#contacto" class="btn btn-primary">Hablemos de tu caso</a>
+    </div>
+
+    <div class="feature-list">
+      <div class="feature-item reveal">
+        <div class="feature-dot"></div>
+        <div>
+          <h4>Calidad de agencia</h4>
+          <p>Cada pieza pasa por curaduría humana antes de llegar a ti — no es solo el output crudo de un modelo.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-dot"></div>
+        <div>
+          <h4>Stack flexible</h4>
+          <p>Usamos el modelo y la herramienta de IA que mejor se ajuste a cada pieza, sin atarte a uno solo.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-dot"></div>
+        <div>
+          <h4>Entrega constante</h4>
+          <p>Pensado para contenido recurrente, no solo piezas sueltas — tu marca publica sin pausas.</p>
+        </div>
+      </div>
+      <div class="feature-item reveal">
+        <div class="feature-dot"></div>
+        <div>
+          <h4>Comunicación directa</h4>
+          <p>Hablas con quien produce el contenido, no con capas de intermediarios.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container cta-banner-inner reveal">
+    <h2>¿Listo para producir contenido?</h2>
+    <p>Agenda una llamada de 20 minutos sin costo. Salimos con una propuesta de producción concreta.</p>
+    <a href="#contacto" class="btn btn-primary btn-lg">Agenda tu llamada</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="section" id="contacto">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Contacto</div>
+      <h2>Conversemos sobre tu proyecto</h2>
+      <p class="lead-text">
+        Cuéntanos qué contenido necesitas producir. Respondemos en menos de 24 horas hábiles con una propuesta.
+      </p>
+
+      <div class="contact-methods">
+        <a href="mailto:hola@axiomai.com" class="contact-method">
+          <span class="contact-icon">✉</span>
+          <span>hola@axiomai.com</span>
+        </a>
+        <a href="https://wa.me/10000000000" target="_blank" rel="noopener" class="contact-method">
+          <span class="contact-icon">☎</span>
+          <span>WhatsApp Business</span>
+        </a>
+      </div>
+      <p class="contact-note">* Actualiza el correo y el número de WhatsApp con los datos reales de tu emprendimiento en <code>index.html</code>.</p>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required placeholder="Tu nombre">
+      </div>
+      <div class="form-row">
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
+      </div>
+      <div class="form-row">
+        <label for="company">Empresa (opcional)</label>
+        <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
+      </div>
+      <div class="form-row">
+        <label for="message">Cuéntanos tu caso</label>
+        <textarea id="message" name="message" rows="4" required placeholder="¿Qué contenido te gustaría producir?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar mensaje</button>
+      <p class="form-hint" id="formHint">Se abrirá tu cliente de correo con el mensaje ya redactado.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">◆</span>
+      <span>AXIOM<span class="logo-thin">AI</span></span>
+    </a>
+    <p class="footer-copy">© <span id="year"></span> AXIOM AI. Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
