@@ -102,6 +102,6 @@ contactForm.addEventListener('submit', (e) => {
     `Nombre: ${name}\nCorreo: ${email}\nEmpresa: ${company || '-'}\n\nMensaje:\n${message}`
   );
 
-  window.location.href = `mailto:hola@axiomai.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:hola@mediaforge.ai?subject=${subject}&body=${body}`;
   formHint.textContent = 'Abriendo tu cliente de correo con el mensaje listo para enviar…';
 });
