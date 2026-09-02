@@ -1,4 +1,4 @@
-// ============ AXIOM AI — site interactions ============
+// ============ VivaForge — site interactions ============
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
