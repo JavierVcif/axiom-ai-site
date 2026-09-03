@@ -4,3 +4,8 @@ Thumbs.db
 
 # Original raw video exports — the site uses the copies in assets/videos/
 /Videos/
+
+# Worker / chatbot tooling
+node_modules/
+.wrangler/
+.dev.vars

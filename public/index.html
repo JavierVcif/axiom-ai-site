@@ -358,6 +358,42 @@
   </div>
 </footer>
 
+<!-- CHAT WIDGET -->
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-panel-head">
+      <div class="chat-panel-head-info">
+        <span class="chat-panel-mark">⚡</span>
+        <div>
+          <strong>Asistente VivaForge</strong>
+          <span>Responde sobre nuestros servicios</span>
+        </div>
+      </div>
+      <button class="chat-panel-close" id="chatClose" aria-label="Cerrar chat">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg chat-msg-bot">
+        <p>Hola 👋 Soy el asistente de VivaForge. Pregúntame sobre nuestros servicios de video, imagen o contenido para redes con IA.</p>
+      </div>
+    </div>
+    <div class="chat-typing" id="chatTyping" hidden>
+      <span></span><span></span><span></span>
+    </div>
+    <form class="chat-input-row" id="chatForm">
+      <input type="text" id="chatInput" placeholder="Escribe tu pregunta…" autocomplete="off" required maxlength="500">
+      <button type="submit" class="chat-send" aria-label="Enviar">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 12l16-8-6 8 6 8-16-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+    </form>
+  </div>
+
+  <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat con el asistente de VivaForge">
+    <svg class="chat-toggle-icon-open" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v12H8l-4 4V4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <svg class="chat-toggle-icon-close" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
 <script src="js/script.js"></script>
+<script src="js/chat.js"></script>
 </body>
 </html>
