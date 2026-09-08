@@ -112,7 +112,7 @@ async function handleChat(request: Request, env: Env): Promise<Response> {
   }
 }
 
-const CONTACT_TO = "javier.vegac@gmail.com";
+const CONTACT_TO = ["javier.vegac@gmail.com", "fpaz.vega@gmail.com"];
 const CONTACT_FROM = "VivaForge <contacto@mail.vivaforge.io>";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_FIELD_LENGTH = 200;
@@ -158,7 +158,7 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
       },
       body: JSON.stringify({
         from: CONTACT_FROM,
-        to: [CONTACT_TO],
+        to: CONTACT_TO,
         reply_to: email,
         subject,
         text,
