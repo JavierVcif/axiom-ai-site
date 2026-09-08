@@ -85,11 +85,12 @@ bgThumbButtons.forEach(thumb => {
   });
 });
 
-/* ---- contact form -> mailto ---- */
+/* ---- contact form -> /api/contact ---- */
 const contactForm = document.getElementById('contactForm');
 const formHint = document.getElementById('formHint');
+const contactSubmitBtn = contactForm.querySelector('button[type="submit"]');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const name = document.getElementById('name').value.trim();
@@ -97,11 +98,26 @@ contactForm.addEventListener('submit', (e) => {
   const company = document.getElementById('company').value.trim();
   const message = document.getElementById('message').value.trim();
 
-  const subject = encodeURIComponent(`Consulta de ${name}${company ? ' — ' + company : ''}`);
-  const body = encodeURIComponent(
-    `Nombre: ${name}\nCorreo: ${email}\nEmpresa: ${company || '-'}\n\nMensaje:\n${message}`
-  );
+  contactSubmitBtn.disabled = true;
+  formHint.textContent = 'Enviando…';
 
-  window.location.href = `mailto:hola@vivaforge.io?subject=${subject}&body=${body}`;
-  formHint.textContent = 'Abriendo tu cliente de correo con el mensaje listo para enviar…';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ name, email, company, message }),
+    });
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok || data.error) {
+      formHint.textContent = 'No pudimos enviar tu mensaje. Escríbenos directo a hola@vivaforge.io.';
+    } else {
+      formHint.textContent = '¡Mensaje enviado! Te respondemos en menos de 24 horas hábiles.';
+      contactForm.reset();
+    }
+  } catch (err) {
+    formHint.textContent = 'Hubo un problema de conexión. Escríbenos directo a hola@vivaforge.io.';
+  } finally {
+    contactSubmitBtn.disabled = false;
+  }
 });

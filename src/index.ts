@@ -4,6 +4,7 @@
 export interface Env {
   AI: Ai;
   ASSETS: Fetcher;
+  RESEND_API_KEY: string;
 }
 
 const SYSTEM_PROMPT = `Eres el asistente virtual del sitio web de VivaForge, un estudio de contenido con inteligencia artificial.
@@ -50,6 +51,13 @@ export default {
         return json({ error: "Método no permitido" }, 405);
       }
       return handleChat(request, env);
+    }
+
+    if (url.pathname === "/api/contact") {
+      if (request.method !== "POST") {
+        return json({ error: "Método no permitido" }, 405);
+      }
+      return handleContact(request, env);
     }
 
     return json({ error: "No encontrado" }, 404);
@@ -101,6 +109,72 @@ async function handleChat(request: Request, env: Env): Promise<Response> {
   } catch (err) {
     console.error("AI run failed", err);
     return json({ error: "Error generando la respuesta" }, 502);
+  }
+}
+
+const CONTACT_TO = "javier.vegac@gmail.com";
+const CONTACT_FROM = "VivaForge <contacto@mail.vivaforge.io>";
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_FIELD_LENGTH = 200;
+const MAX_MESSAGE_FIELD_LENGTH = 3000;
+
+interface ContactBody {
+  name?: unknown;
+  email?: unknown;
+  company?: unknown;
+  message?: unknown;
+}
+
+async function handleContact(request: Request, env: Env): Promise<Response> {
+  let body: ContactBody;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "JSON inválido" }, 400);
+  }
+
+  const name = typeof body.name === "string" ? body.name.trim().slice(0, MAX_FIELD_LENGTH) : "";
+  const email = typeof body.email === "string" ? body.email.trim().slice(0, MAX_FIELD_LENGTH) : "";
+  const company = typeof body.company === "string" ? body.company.trim().slice(0, MAX_FIELD_LENGTH) : "";
+  const message =
+    typeof body.message === "string" ? body.message.trim().slice(0, MAX_MESSAGE_FIELD_LENGTH) : "";
+
+  if (!name || !email || !message) {
+    return json({ error: "Faltan campos obligatorios" }, 400);
+  }
+  if (!EMAIL_RE.test(email)) {
+    return json({ error: "Correo inválido" }, 400);
+  }
+
+  const subject = `Nuevo contacto de ${name}${company ? ` — ${company}` : ""}`;
+  const text = `Nombre: ${name}\nCorreo: ${email}\nEmpresa: ${company || "-"}\n\nMensaje:\n${message}`;
+
+  try {
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        from: CONTACT_FROM,
+        to: [CONTACT_TO],
+        reply_to: email,
+        subject,
+        text,
+      }),
+    });
+
+    if (!res.ok) {
+      const errBody = await res.text().catch(() => "");
+      console.error("Resend send failed", res.status, errBody);
+      return json({ error: "No se pudo enviar el mensaje" }, 502);
+    }
+
+    return json({ ok: true });
+  } catch (err) {
+    console.error("Contact send failed", err);
+    return json({ error: "No se pudo enviar el mensaje" }, 502);
   }
 }
 
