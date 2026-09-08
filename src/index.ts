@@ -24,7 +24,7 @@ SERVICIOS ADICIONALES (bajo demanda, no el foco principal):
 PROCESO DE TRABAJO: Brief & referencias → Producción con IA → Curaduría & edición → Entrega & calendario.
 
 CONTACTO:
-- Correo: hola@vivaforge.io
+- Correo: contacto@vivaforge.io
 - El formulario de contacto en la página también sirve para agendar una llamada gratuita de 20 minutos.
 
 INSTRUCCIONES DE RESPUESTA:
@@ -32,7 +32,7 @@ INSTRUCCIONES DE RESPUESTA:
 - Sé breve: 2-4 frases por respuesta salvo que el usuario pida más detalle.
 - Responde solo sobre VivaForge y lo descrito arriba. No inventes precios, plazos ni datos que no aparecen aquí — si preguntan precio exacto, indica que se define según el proyecto y que lo mejor es agendar una llamada.
 - Si preguntan algo que NO tiene relación con VivaForge (trivia, temas generales, otros negocios), NO lo respondas bajo ninguna circunstancia, ni siquiera parcialmente. Indica que solo puedes ayudar con temas de VivaForge y redirige a contacto.
-- Cuando sea natural, invita a escribir a hola@vivaforge.io o a agendar una llamada gratuita.`;
+- Cuando sea natural, invita a escribir a contacto@vivaforge.io o a agendar una llamada gratuita.`;
 
 const MAX_HISTORY = 8;
 const MAX_MESSAGE_LENGTH = 1000;

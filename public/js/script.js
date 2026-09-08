@@ -110,13 +110,13 @@ contactForm.addEventListener('submit', async (e) => {
     const data = await res.json().catch(() => ({}));
 
     if (!res.ok || data.error) {
-      formHint.textContent = 'No pudimos enviar tu mensaje. Escríbenos directo a hola@vivaforge.io.';
+      formHint.textContent = 'No pudimos enviar tu mensaje. Escríbenos directo a contacto@vivaforge.io.';
     } else {
       formHint.textContent = '¡Mensaje enviado! Te respondemos en menos de 24 horas hábiles.';
       contactForm.reset();
     }
   } catch (err) {
-    formHint.textContent = 'Hubo un problema de conexión. Escríbenos directo a hola@vivaforge.io.';
+    formHint.textContent = 'Hubo un problema de conexión. Escríbenos directo a contacto@vivaforge.io.';
   } finally {
     contactSubmitBtn.disabled = false;
   }

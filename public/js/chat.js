@@ -66,7 +66,7 @@
       typingEl.hidden = true;
 
       if (!res.ok || data.error || !data.reply) {
-        addMessage('error', 'No pude responder justo ahora. Intenta de nuevo o escríbenos a hola@vivaforge.io.');
+        addMessage('error', 'No pude responder justo ahora. Intenta de nuevo o escríbenos a contacto@vivaforge.io.');
       } else {
         addMessage('bot', data.reply);
         history.push({ role: 'assistant', content: data.reply });
